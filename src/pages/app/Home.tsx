@@ -21,12 +21,14 @@ export function Home() {
             description:
                 "Acompanhamento das receitas e despesas municipais oriundas do acordo de reparação dos danos em Brumadinho",
             image: imgAcordo,
+            route: "/acordomunicipios",
         },
         {
             title: "ACORDO DE REPARAÇÃO - ESTADO",
             description:
                 "Acompanhamento das receitas e despesas estaduais oriundas do acordo de reparação dos danos em Brumadinho",
             image: imgAcordo,
+            route: "/acordoestado",
         },
         {
             title: "INFORMAÇÕES DE SANEAMENTO",
