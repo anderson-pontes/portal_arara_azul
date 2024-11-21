@@ -59,7 +59,7 @@ export function Home() {
     <>
       <Helmet title="Home" />
       <div className="p-6 min-h-screen">
-        <h1 className="text-3xl text-slate-800 font-bold mb-8 text-center">
+        <h1 className="text-3xl text-sky-800 font-bold mb-8 text-center">
           Bem-vindo ao portal Arara-Azul!
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -84,7 +84,7 @@ export function Home() {
                 </div>
 
                 {/* Verso do Card (Mensagem Oculta) */}
-                <div className="absolute inset-0 bg-blue-600 rounded-lg flex items-center justify-center text-center rotate-y-180 backface-hidden p-6 text-white">
+                <div className="absolute inset-0 bg-blue-500 rounded-lg flex items-center justify-center text-center rotate-y-180 backface-hidden p-6 text-white">
                   
                   <p className="text-base font-semibold">
                      {card.title}.
