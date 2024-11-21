@@ -21,7 +21,7 @@ export function Header() {
                 <div className="flex items-center gap-4">
                     <span className="font-semibold text-indigo-50 flex items-center gap-3">
                     <img className="h-12 w-15 text-white" src={Logo} alt="Logo" />
-                        Portal Arara-Azul
+                        PORTAL DE ANÁLISE DE DADOS - ARARA-AZUL
                     </span>
                     <Separator orientation="vertical" className="h-6 hidden lg:block" />
                 </div>
