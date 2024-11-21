@@ -1,58 +1,64 @@
 import { Helmet } from "react-helmet-async";
+import imgMaps from '@/assets/maps.png';
+import imgAcordo from '@/assets/acordo.png';
+import imgSaneamento from '@/assets/saneamento.png';
+import imgIndicadores from '@/assets/indicadores.png';
+import imgEngenharia from '@/assets/engenharia.png';
+import imgCamara from '@/assets/camara.png';
+import imgDespesa from '@/assets/despesa.png';
 
 export function Home() {
   const flashcards = [
     {
       title: "JURISDICIONADOS",
-      description: "Informações relacionadas aos jurisdicionados do estado.",
-      image: "/images/jurisdicionados.png",
+      description: "Levantamento das pessoas jurídicas subordinadas à jurisdição do TCE-PA",
+      image: imgMaps,
     },
     {
       title: "ACORDO DE REPARAÇÃO - MUNICÍPIOS",
       description:
-        "Acompanhamento das receitas e despesas municipais oriundas do acordo de reparação dos danos em Brumadinho.",
-      image: "/images/acordo-municipios.png",
+        "Acompanhamento das receitas e despesas municipais oriundas do acordo de reparação dos danos em Brumadinho",
+      image: imgAcordo,
     },
     {
       title: "ACORDO DE REPARAÇÃO - ESTADO",
       description:
-        "Detalhes sobre o uso de recursos oriundos do acordo de reparação estadual.",
-      image: "/images/acordo-estado.png",
+        "Acompanhamento das receitas e despesas estaduais oriundas do acordo de reparação dos danos em Brumadinho",
+      image: imgAcordo,
     },
     {
       title: "INFORMAÇÕES DE SANEAMENTO",
-      description: "Dados e indicadores de saneamento em todo o estado.",
-      image: "/images/saneamento.png",
+      description: "Informações de Saneamento Básico disponibilizadas no Sistema Nacional de Informações sobre Saneamento - SNIS",
+      image: imgSaneamento,
     },
     {
       title: "INDICADORES DE SANEAMENTO",
-      description:
-        "Indicadores-chave para avaliação da qualidade do saneamento básico.",
-      image: "/images/indicadores-saneamento.png",
+      description: "Indicadores de Saneamento Básico disponibilizadas no Sistema Nacional de informações sobre Saneamento - SNIS",
+      image: imgIndicadores,
     },
     {
       title: "AGREGADOR DE TABELAS DE CUSTOS DE ENGENHARIA",
       description:
-        "Ferramenta para consolidar tabelas de custos em projetos de engenharia.",
-      image: "/images/custos-engenharia.png",
+        "Dados das tabelas de custos de insumos e composições de serviços de obras e serviços de engenharia",
+      image: imgEngenharia
     },
     {
       title: "CÂMARAS EM FOCO",
-      description: "Destaques e notícias sobre as câmaras municipais.",
-      image: "/images/camaras.png",
+      description: "Panorama financeiro das câmaras municipais paraenses",
+      image: imgCamara
     },
     {
       title: "PANORAMA MUNICIPAL - DESPESAS",
       description:
-        "Visão geral das despesas públicas municipais em diversas áreas.",
-      image: "/images/despesas.png",
+        "Panorama das despesas dos municípios paraenses",
+      image: imgDespesa
     },
   ];
 
   return (
     <>
       <Helmet title="Home" />
-      <div className="p-6 bg-gray-50 min-h-screen">
+      <div className="p-6 min-h-screen">
         <h1 className="text-3xl text-slate-800 font-bold mb-8 text-center">
           Bem-vindo ao portal Arara-Azul!
         </h1>
@@ -79,9 +85,9 @@ export function Home() {
 
                 {/* Verso do Card (Mensagem Oculta) */}
                 <div className="absolute inset-0 bg-blue-600 rounded-lg flex items-center justify-center text-center rotate-y-180 backface-hidden p-6 text-white">
-                  <h2 className="text-lg font-semibold mb-2">Detalhes Extras</h2>
-                  <p className="text-sm">
-                    Clique aqui para saber mais sobre {card.title}.
+                  
+                  <p className="text-base font-semibold">
+                     {card.title}.
                   </p>
                 </div>
               </div>

@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Home, Menu, Search } from "lucide-react";
+import { Home, Menu } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { NavLink } from "react-router-dom";
+import Logo from '@/assets/logo.png';
 
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,8 +19,8 @@ export function Header() {
         <div className={`border-b ${isMenuOpen ? "mb-40" : ""}`}>
             <div className="flex h-16 items-center gap-6 justify-start px-6 bg-gradient-to-r from-blue-500 shadow-lg">
                 <div className="flex items-center gap-4">
-                    <span className="font-semibold text-indigo-50 flex items-center gap-4">
-                        <Search className="h-5 w-5" />
+                    <span className="font-semibold text-indigo-50 flex items-center gap-3">
+                    <img className="h-12 w-15 text-white" src={Logo} alt="Logo" />
                         Portal Arara-Azul
                     </span>
                     <Separator orientation="vertical" className="h-6 hidden lg:block" />
