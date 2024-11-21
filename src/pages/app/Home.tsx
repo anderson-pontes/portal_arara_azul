@@ -6,6 +6,7 @@ import imgIndicadores from '@/assets/indicadores.png';
 import imgEngenharia from '@/assets/engenharia.png';
 import imgCamara from '@/assets/camara.png';
 import imgDespesa from '@/assets/despesa.png';
+import { Link } from 'react-router-dom';
 
 export function Home() {
   const flashcards = [
@@ -13,6 +14,7 @@ export function Home() {
       title: "JURISDICIONADOS",
       description: "Levantamento das pessoas jurídicas subordinadas à jurisdição do TCE-PA",
       image: imgMaps,
+      route: "/jurisdicionados",
     },
     {
       title: "ACORDO DE REPARAÇÃO - MUNICÍPIOS",
@@ -84,11 +86,15 @@ export function Home() {
                 </div>
 
                 {/* Verso do Card (Mensagem Oculta) */}
-                <div className="absolute inset-0 bg-blue-500 rounded-lg flex items-center justify-center text-center rotate-y-180 backface-hidden p-6 text-white">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center text-center rotate-y-180 backface-hidden p-6 text-white">
+                  <Link to={card.route || "/"}
+                    className="text-lg font-semibold underline hover:text-blue-300">
+                        <h1 className="text-lg font-semibold">
+                            {card.title}.
+                        </h1>
                   
-                  <p className="text-base font-semibold">
-                     {card.title}.
-                  </p>
+                  </Link>
+                  
                 </div>
               </div>
             </div>
