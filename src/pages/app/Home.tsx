@@ -70,12 +70,12 @@ export function Home() {
                     {flashcards.map((card, index) => (
                         <div
                             key={index}
-                            className="group perspective relative w-full h-64 rounded-lg shadow-md overflow-hidden transform transition-transform duration-700"
+                            className="group perspective relative w-full h-64 rounded-3xl shadow-md overflow-hidden transform transition-transform duration-700"
                         >
                             {/* Container 3D */}
                             <div className="relative w-full h-full transform-style-3d group-hover:rotate-y-180">
                                 {/* Frente do Card (Imagem + Título + Parágrafo) */}
-                                <div className="absolute inset-0 bg-white rounded-lg flex flex-col items-center justify-center text-center shadow-lg backface-hidden p-6">
+                                <div className="absolute inset-0 bg-white rounded-3xl flex flex-col items-center justify-center text-center shadow-lg backface-hidden p-6">
                                     <img
                                         src={card.image}
                                         alt={card.title}
@@ -88,7 +88,7 @@ export function Home() {
                                 </div>
 
                                 {/* Verso do Card (Mensagem Oculta) */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center text-center rotate-y-180 backface-hidden p-6 text-white">
+                                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl flex items-center justify-center text-center rotate-y-180 backface-hidden p-6 text-white">
                                     <Link
                                         to={card.route || "/"}
                                         className="text-lg font-semibold underline hover:text-blue-300">
