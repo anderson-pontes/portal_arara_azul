@@ -8,6 +8,7 @@ import imgCamara from "@/assets/camara.png";
 import imgDespesa from "@/assets/despesa.png";
 import { Link } from "react-router-dom";
 
+
 export function Home() {
     const flashcards = [
         {
@@ -68,9 +69,14 @@ export function Home() {
         <>
             <Helmet title="Home" />
             <div className="p-6 min-h-screen">
-                <h1 className="text-3xl text-sky-800 font-bold mb-8 text-center">
-                    Bem-vindo ao Portal de Análise de Dados Arara-Azul!
-                </h1>
+                
+               
+
+                    <h1 className="text-3xl text-sky-800 font-bold mb-8 text-center">
+                        Bem-vindo ao Portal de Análise de Dados Arara-Azul!
+                    </h1>
+                    
+              
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     {flashcards.map((card, index) => (
                         <div

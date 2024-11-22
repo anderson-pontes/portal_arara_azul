@@ -6,22 +6,25 @@ export function PanoramaMunicipalDespesas() {
             <Helmet title="Panorama Municipal - Despesas" />
             <div className='h-screen flex flex-col'>
                 <h1 className="text-3xl text-sky-800 font-bold mb-8 text-center">PANORAMA MUNICIPAL - DESPESAS</h1>
-                {/* <div className="mt-6 flex flex-1">
+                <div className="mt-6 flex flex-1 bg-blue-100">
 
                      <iframe
-                        className='rounded-md'
-                        title="Consulta Devedor - CNPJ"
+                        className='rounded-2xl w-full h-full'
+                        title="AB_Despesas"
                         width="100%"
                         height="100%"
-                        src="https://app.powerbi.com/view?r=eyJrIjoiOWVlNjIzMjEtNDExYS00YTYxLTllNDEtMDdlM2VhNjhlY2IxIiwidCI6ImIwYmUwNjYzLTkxNWUtNDczZS1hNTU2LWExNmVmOWRmZTQxNCJ9"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiMThkYmFlNzUtZjgxYS00MGJiLWIwMjQtYTI3NjMzYTBjZjU2IiwidCI6ImIwYmUwNjYzLTkxNWUtNDczZS1hNTU2LWExNmVmOWRmZTQxNCJ9"
                         allowFullScreen={true}
-                        style={{ border: 'none' }}
+                        style={{
+                            border: 'none',
+                            backgroundColor: 'transparent', // Herda a cor de fundo do pai
+                        }}
 
                     >
                     </iframe>
 
 
-                </div> */}
+                </div> 
                 
                
             </div>
