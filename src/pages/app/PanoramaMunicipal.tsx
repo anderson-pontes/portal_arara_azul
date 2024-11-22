@@ -5,7 +5,7 @@ export function PanoramaMunicipalDespesas() {
         <>
             <Helmet title="Panorama Municipal - Despesas" />
             <div className='h-screen flex flex-col'>
-                <h1 className="text-3xl text-sky-800 font-bold mb-8 text-center">PANORAMA MUNICIPAL - DESPESAS</h1>
+                
                 <div className="mt-6 flex flex-1 bg-blue-100">
 
                      <iframe
@@ -13,7 +13,7 @@ export function PanoramaMunicipalDespesas() {
                         title="AB_Despesas"
                         width="100%"
                         height="100%"
-                        src="https://app.powerbi.com/view?r=eyJrIjoiMThkYmFlNzUtZjgxYS00MGJiLWIwMjQtYTI3NjMzYTBjZjU2IiwidCI6ImIwYmUwNjYzLTkxNWUtNDczZS1hNTU2LWExNmVmOWRmZTQxNCJ9"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiM2E5OTZlNjAtYTAzMS00ZDhkLTk0NzYtYzk3M2U1MDNjNTE5IiwidCI6ImIwYmUwNjYzLTkxNWUtNDczZS1hNTU2LWExNmVmOWRmZTQxNCJ9"
                         allowFullScreen={true}
                         style={{
                             border: 'none',
