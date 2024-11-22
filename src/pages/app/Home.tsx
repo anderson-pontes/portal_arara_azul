@@ -34,28 +34,33 @@ export function Home() {
             title: "INFORMAÇÕES DE SANEAMENTO",
             description: "Informações de Saneamento Básico disponibilizadas no Sistema Nacional de Informações sobre Saneamento - SNIS",
             image: imgSaneamento,
+            route: "/saneamento",
         },
         {
             title: "INDICADORES DE SANEAMENTO",
             description: "Indicadores de Saneamento Básico disponibilizadas no Sistema Nacional de informações sobre Saneamento - SNIS",
             image: imgIndicadores,
+            route: "/indicadores",
         },
         {
             title: "AGREGADOR DE TABELAS DE CUSTOS DE ENGENHARIA",
             description:
                 "Dados das tabelas de custos de insumos e composições de serviços de obras e serviços de engenharia",
             image: imgEngenharia,
+            route: "/custosdeengenharia",
         },
         {
             title: "CÂMARAS EM FOCO",
             description: "Panorama financeiro das câmaras municipais paraenses",
             image: imgCamara,
+            route: "/camarasemfoco",
         },
         {
             title: "PANORAMA MUNICIPAL - DESPESAS",
             description:
                 "Panorama das despesas dos municípios paraenses",
             image: imgDespesa,
+            route: "/panoramamunicipal"
         },
     ];
 

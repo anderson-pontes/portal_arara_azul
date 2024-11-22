@@ -6,6 +6,11 @@ import { AppLayout } from './src/pages/layout/app'
 import { Jurisdicionados } from '@/pages/app/Jurisdicionados';
 import { AcordoMunicipios } from '@/pages/app/AcordoMunicipios';
 import { AcordoEstado } from '@/pages/app/AcordoEstado';
+import { Saneamento } from '@/pages/app/Saneamento';
+import { IndicadoresSaneamento } from '@/pages/app/IndicadoresSaneamento';
+import { CustosEngenharia } from '@/pages/app/CustosEngenharia';
+import { CamarasEmFoco } from '@/pages/app/CamarasFoco';
+import { PanoramaMunicipalDespesas } from '@/pages/app/PanoramaMunicipal';
 
 
 
@@ -19,6 +24,11 @@ export const Router = createHashRouter([
       { path: '/jurisdicionados', element: <Jurisdicionados /> },     
       { path: '/acordomunicipios', element: <AcordoMunicipios /> },     
       { path: '/acordoestado', element: <AcordoEstado /> },     
+      { path: '/saneamento', element: <Saneamento /> },     
+      { path: '/indicadores', element: <IndicadoresSaneamento /> },     
+      { path: '/custosdeengenharia', element: <CustosEngenharia /> },     
+      { path: '/camarasemfoco', element: <CamarasEmFoco /> },     
+      { path: '/panoramamunicipal', element: <PanoramaMunicipalDespesas /> },     
       
       
     ]
