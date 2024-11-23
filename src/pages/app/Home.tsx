@@ -6,6 +6,8 @@ import imgEngenharia from "@/assets/engenharia.png";
 import imgCamara from "@/assets/camara.png";
 import imgDespesa from "@/assets/despesa.png";
 import { Link } from "react-router-dom";
+import { Button } from '@/components/ui/button';
+import { Eye } from 'lucide-react';
 
 
 export function Home() {
@@ -30,7 +32,7 @@ export function Home() {
             image: imgDespesa,
             route: "/panoramamunicipal"
         },
-        
+
         {
             title: "INFORMAÇÕES DE SANEAMENTO",
             description: "Informações de Saneamento Básico disponibilizadas no Sistema Nacional de Informações sobre Saneamento - SNIS",
@@ -50,22 +52,22 @@ export function Home() {
             image: imgEngenharia,
             route: "/acompanhamentodeprodutividade",
         },
-        
-        
+
+
     ];
 
     return (
         <>
             <Helmet title="Home" />
             <div className="p-6 min-h-screen">
-                
-               
 
-                    <h1 className="text-3xl text-sky-800 font-bold mb-8 text-center">
-                        Bem-vindo ao Portal de Análise de Dados Arara-Azul!
-                    </h1>
-                    
-              
+
+
+                <h1 className="text-3xl text-sky-800 font-bold mb-8 text-center">
+                    Bem-vindo ao Portal de Análise de Dados Arara-Azul!
+                </h1>
+
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     {flashcards.map((card, index) => (
                         <div
@@ -88,12 +90,19 @@ export function Home() {
                                 </div>
 
                                 {/* Verso do Card */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl flex items-center justify-center text-center rotate-y-180 backface-hidden p-6 text-white">
+                                <div className="flex flex-col gap-4 absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl items-center justify-center text-center rotate-y-180 backface-hidden p-6 text-white">
+                                    <h1 className="text-lg font-semibold">{card.title}</h1>
                                     <Link
                                         to={card.route || "/"}
                                         className="text-lg font-semibold underline hover:text-blue-300"
+
                                     >
-                                        <h1 className="text-lg font-semibold">{card.title}</h1>
+                                        <Button variant="secondary" className='bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:text-slate-300'>
+                                        <Eye className="h-5 w-5" />
+                                            Saiba mais
+                                        </Button>
+
+
                                     </Link>
                                 </div>
                             </div>

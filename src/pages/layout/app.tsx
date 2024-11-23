@@ -13,7 +13,7 @@ export function AppLayout() {
         <Outlet />
 
         <footer className="text-sm text-muted-foreground text-center mt-8">
-          Copyright &copy; TCE-PA {new Date().getFullYear()} | MULT TECH CONSULTORIA E TECNOLOGIA LTDA - Todos os direitos reservados. 
+          Copyright &copy; {new Date().getFullYear()} | MULT TECH CONSULTORIA E TECNOLOGIA LTDA | Todos os direitos reservados. 
         </footer>
 
       </div>
