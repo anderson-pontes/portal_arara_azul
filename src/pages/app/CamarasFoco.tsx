@@ -5,15 +5,15 @@ export function CamarasEmFoco() {
         <>
             <Helmet title="Câmaras em Foco" />
             <div className='h-screen flex flex-col'>
-                <h1 className="text-3xl text-sky-800 font-bold mb-8 text-center">CÂMARAS EM FOCO</h1>
-                {/* <div className="mt-6 flex flex-1">
+                
+                <div className="mt-6 flex flex-1">
 
                      <iframe
                         className='rounded-md'
-                        title="Consulta Devedor - CNPJ"
+                        title="AB_Camaras"
                         width="100%"
                         height="100%"
-                        src="https://app.powerbi.com/view?r=eyJrIjoiOWVlNjIzMjEtNDExYS00YTYxLTllNDEtMDdlM2VhNjhlY2IxIiwidCI6ImIwYmUwNjYzLTkxNWUtNDczZS1hNTU2LWExNmVmOWRmZTQxNCJ9"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiMWRkNGQ4YjYtM2FmMi00MTVmLTlkMjYtODJjYWZhNDM3YmUzIiwidCI6IjA2YjQ3Y2UyLWZmN2UtNDRjOS05M2ExLTEwZDVhYTE4M2RlNCJ9"
                         allowFullScreen={true}
                         style={{ border: 'none' }}
 
@@ -21,7 +21,7 @@ export function CamarasEmFoco() {
                     </iframe>
 
 
-                </div> */}
+                </div> 
                 
                
             </div>

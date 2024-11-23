@@ -13,7 +13,7 @@ export function PanoramaMunicipalDespesas() {
                         title="AB_Despesas"
                         width="100%"
                         height="100%"
-                        src="https://app.powerbi.com/view?r=eyJrIjoiM2E5OTZlNjAtYTAzMS00ZDhkLTk0NzYtYzk3M2U1MDNjNTE5IiwidCI6ImIwYmUwNjYzLTkxNWUtNDczZS1hNTU2LWExNmVmOWRmZTQxNCJ9"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiN2M0YmY1NzMtNjQzZi00NzE3LTgxMzQtM2Q4YTAxN2Q3MjA5IiwidCI6IjA2YjQ3Y2UyLWZmN2UtNDRjOS05M2ExLTEwZDVhYTE4M2RlNCJ9"
                         allowFullScreen={true}
                         style={{
                             border: 'none',
