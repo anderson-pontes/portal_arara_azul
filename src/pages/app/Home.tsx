@@ -46,7 +46,7 @@ export function Home() {
         {
             title: "ACOMPANHAMENTO DE PRODUTIVIDADE",
             description:
-                "Dados das tabelas de custos de insumos e composições de serviços de obras e serviços de engenharia",
+                "Monitoramento da produtividade e metas dos auditores estaduais",
             image: imgEngenharia,
             route: "/acompanhamentodeprodutividade",
         },
