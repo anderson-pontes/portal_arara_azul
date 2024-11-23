@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import imgMaps from "@/assets/maps.png";
-import imgAcordo from "@/assets/acordo.png";
 import imgSaneamento from "@/assets/saneamento.png";
 import imgIndicadores from "@/assets/indicadores.png";
 import imgEngenharia from "@/assets/engenharia.png";
@@ -17,39 +16,7 @@ export function Home() {
             image: imgMaps,
             route: "/jurisdicionados",
         },
-        {
-            title: "ACORDO DE REPARAÇÃO - MUNICÍPIOS",
-            description:
-                "Acompanhamento das receitas e despesas municipais oriundas do acordo de reparação dos danos em Brumadinho",
-            image: imgAcordo,
-            route: "/acordomunicipios",
-        },
-        {
-            title: "ACORDO DE REPARAÇÃO - ESTADO",
-            description:
-                "Acompanhamento das receitas e despesas estaduais oriundas do acordo de reparação dos danos em Brumadinho",
-            image: imgAcordo,
-            route: "/acordoestado",
-        },
-        {
-            title: "INFORMAÇÕES DE SANEAMENTO",
-            description: "Informações de Saneamento Básico disponibilizadas no Sistema Nacional de Informações sobre Saneamento - SNIS",
-            image: imgSaneamento,
-            route: "/saneamento",
-        },
-        {
-            title: "INDICADORES DE SANEAMENTO",
-            description: "Indicadores de Saneamento Básico disponibilizadas no Sistema Nacional de informações sobre Saneamento - SNIS",
-            image: imgIndicadores,
-            route: "/indicadores",
-        },
-        {
-            title: "AGREGADOR DE TABELAS DE CUSTOS DE ENGENHARIA",
-            description:
-                "Dados das tabelas de custos de insumos e composições de serviços de obras e serviços de engenharia",
-            image: imgEngenharia,
-            route: "/custosdeengenharia",
-        },
+
         {
             title: "CÂMARAS EM FOCO",
             description: "Panorama financeiro das câmaras municipais paraenses",
@@ -63,6 +30,28 @@ export function Home() {
             image: imgDespesa,
             route: "/panoramamunicipal"
         },
+        
+        {
+            title: "INFORMAÇÕES DE SANEAMENTO",
+            description: "Informações de Saneamento Básico disponibilizadas no Sistema Nacional de Informações sobre Saneamento - SNIS",
+            image: imgSaneamento,
+            route: "/saneamento",
+        },
+        {
+            title: "INDICADORES DE SANEAMENTO",
+            description: "Indicadores de Saneamento Básico disponibilizadas no Sistema Nacional de informações sobre Saneamento - SNIS",
+            image: imgIndicadores,
+            route: "/indicadores",
+        },
+        {
+            title: "ACOMPANHAMENTO DE PRODUTIVIDADE",
+            description:
+                "Dados das tabelas de custos de insumos e composições de serviços de obras e serviços de engenharia",
+            image: imgEngenharia,
+            route: "/acompanhamentodeprodutividade",
+        },
+        
+        
     ];
 
     return (
