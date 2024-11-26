@@ -13,10 +13,11 @@ import { Eye } from 'lucide-react';
 export function Home() {
     const flashcards = [
         {
-            title: "JURISDICIONADOS",
-            description: "Levantamento das pessoas jurídicas subordinadas à jurisdição do TCE-PA",
-            image: imgMaps,
-            route: "/jurisdicionados",
+            title: "ACOMPANHAMENTO DE PRODUTIVIDADE",
+            description:
+                "Monitoramento da produtividade e metas dos auditores estaduais",
+            image: imgEngenharia,
+            route: "/acompanhamentodeprodutividade",
         },
 
         {
@@ -46,12 +47,12 @@ export function Home() {
             route: "/indicadores",
         },
         {
-            title: "ACOMPANHAMENTO DE PRODUTIVIDADE",
-            description:
-                "Monitoramento da produtividade e metas dos auditores estaduais",
-            image: imgEngenharia,
-            route: "/acompanhamentodeprodutividade",
+            title: "JURISDICIONADOS",
+            description: "Levantamento das pessoas jurídicas subordinadas à jurisdição do TCE-PA",
+            image: imgMaps,
+            route: "/jurisdicionados",
         },
+        
 
 
     ];
