@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Home, Menu } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { NavLink } from "react-router-dom";
-import Logo from '@/assets/logo.png';
+import Logo from "@/assets/logo.png";
 
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,10 +17,10 @@ export function Header() {
 
     return (
         <div className={`border-b ${isMenuOpen ? "mb-40" : ""}`}>
-            <div className="flex h-16 items-center gap-6 justify-start px-6 bg-gradient-to-r from-blue-500 shadow-lg">
-                <div className="flex items-center gap-4">
+            <div className="flex h-16 items-center gap-6 justify-start w-screen bg-gradient-to-r from-blue-500 shadow-lg">
+                <div className="flex items-center gap-4 pl-6">
                     <span className="font-semibold text-indigo-50 flex items-center gap-3">
-                    <img className="h-12 w-15 text-white" src={Logo} alt="Logo" />
+                        <img className="h-12 w-15" src={Logo} alt="Logo" />
                         PORTAL DE ANÁLISE DE DADOS ARARA-AZUL
                     </span>
                     <Separator orientation="vertical" className="h-6 hidden lg:block" />
@@ -31,16 +31,17 @@ export function Header() {
                     onClick={toggleMenu}
                     aria-label="Toggle Menu"
                 >
-                    <Menu className="h-6 w-6" />
+                    <Menu className="h-6 w-6 text-indigo-50" />
                 </button>
 
                 {/* Menu Navigation */}
                 <nav
-                    className={`flex-col text-indigo-50 lg:flex-row lg:flex items-start lg:items-center space-x-0 lg:space-x-6 lg:space-y-0 space-y-4 absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto p-4 lg:p-0 z-10 lg:z-auto transition-all duration-300 ease-in-out ${isMenuOpen ? "flex text-indigo-600" : "hidden"
-                        }`}  // Adiciona a cor diferente para o texto no mobile quando o menu está aberto
+                    className={`flex-col text-indigo-50 lg:flex-row lg:flex items-start lg:items-center space-x-0 lg:space-x-6 lg:space-y-0 space-y-4 absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto p-4 lg:p-0 z-10 lg:z-auto transition-all duration-300 ease-in-out ${
+                        isMenuOpen ? "flex text-indigo-600" : "hidden"
+                    }`}
                 >
                     <NavLink to="/" onClick={closeMenu}>
-                        <div className='flex flex-row justify-center items-center gap-2 font-semibold  hover:text-indigo-300'>
+                        <div className="flex flex-row justify-center items-center gap-2 font-semibold hover:text-indigo-300">
                             <Home className="h-5 w-5" />
                             Início
                         </div>
