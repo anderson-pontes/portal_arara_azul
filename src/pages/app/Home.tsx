@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import imgMaps from "@/assets/maps.png";
 import imgSaneamento from "@/assets/saneamento.png";
 import imgIndicadores from "@/assets/indicadores.png";
-import imgEngenharia from "@/assets/engenharia.png";
+import imgProdutividade from "@/assets/produtividade.png";
 import imgCamara from "@/assets/camara.png";
 import imgDespesa from "@/assets/despesa.png";
 import { Link } from "react-router-dom";
@@ -16,7 +16,7 @@ export function Home() {
             title: "ACOMPANHAMENTO DE PRODUTIVIDADE",
             description:
                 "Monitoramento da produtividade e metas dos auditores estaduais",
-            image: imgEngenharia,
+            image: imgProdutividade,
             route: "/acompanhamentodeprodutividade",
         },
 
