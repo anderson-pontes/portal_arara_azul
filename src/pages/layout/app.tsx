@@ -16,14 +16,14 @@ export function AppLayout() {
       </div>
 
       {/* Ajuste de padding para páginas de tela cheia */}
-      <div className={`flex flex-1 flex-col gap-4 ${isFullscreenPage ? "p-0" : "p-8 pt-6"} bg-blue-100`}>
+      <div className={`flex flex-1 flex-col gap-4 w-screen overflow-hidden ${isFullscreenPage ? "p-0" : "p-8 pt-6"} bg-blue-100`}>
         <Outlet />
-      </div>
-
       {/* Footer visível em todas as páginas */}
       <footer className="text-sm text-muted-foreground text-center p-6 w-screen bg-blue-100">
         Copyright &copy; {new Date().getFullYear()} | Todos os direitos reservados.
       </footer>
+      </div>
+
     </div>
   );
 }
