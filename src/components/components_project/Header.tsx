@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home, Menu } from "lucide-react";
+import { Home, Menu, FileSearch } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { NavLink } from "react-router-dom";
 import Logo from "@/assets/logo.png";
@@ -44,6 +44,12 @@ export function Header() {
                         <div className="flex flex-row justify-center items-center gap-2 font-semibold hover:text-indigo-300">
                             <Home className="h-5 w-5" />
                             Início
+                        </div>
+                    </NavLink>
+                    <NavLink to="/pesquisaintegrada" onClick={closeMenu}>
+                        <div className="flex flex-row justify-center items-center gap-2 font-semibold hover:text-indigo-300">
+                            <FileSearch className="h-5 w-5" />
+                            Pesquisa Integrada
                         </div>
                     </NavLink>
                 </nav>

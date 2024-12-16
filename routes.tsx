@@ -11,6 +11,8 @@ import { IndicadoresSaneamento } from '@/pages/app/IndicadoresSaneamento';
 import { CamarasEmFoco } from '@/pages/app/CamarasFoco';
 import { PanoramaMunicipalDespesas } from '@/pages/app/PanoramaMunicipal';
 import { AcompanhamentoProdutividade } from '@/pages/app/AcompanhamentoProdutividade';
+import SearchPage from '@/pages/app/SearchPage';
+import ResultsPage from '@/pages/app/ResultsPage';
 
 
 
@@ -29,6 +31,9 @@ export const Router = createHashRouter([
       { path: '/acompanhamentodeprodutividade', element: <AcompanhamentoProdutividade /> },     
       { path: '/camarasemfoco', element: <CamarasEmFoco /> },     
       { path: '/panoramamunicipal', element: <PanoramaMunicipalDespesas /> },     
+      { path: '/pesquisaintegrada', element: <SearchPage /> },   
+      { path: '/pesquisaintegrada/results', element: <ResultsPage /> },   
+          
       
       
     ]
