@@ -52,12 +52,12 @@ const SearchForm: React.FC = () => {
 
     return (
         <>
-            <Helmet title="Início" />
+            <Helmet title="Pesquisa Avançada" />
             <form className="flex flex-col gap-4 items-center p-4 sm:p-6 md:p-8 ">
 
                 <img className="w-24 h-24" src={logo} alt="Logo" />
                 <h1 className="text-2xl sm:text-3xl font-bold text-center mb-2 text-blue-800/80">Tribunal de Contas do Estado do Pará</h1>
-                <h2 className="text-lg sm:text-xl tracking-tight text-blue-700/80">Pesquisa Integrada</h2>
+                <h2 className="text-lg sm:text-xl tracking-tight text-blue-700/80">Pesquisa Avançada</h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl">
 

@@ -49,7 +49,7 @@ export function Header() {
                     <NavLink to="/pesquisaintegrada" onClick={closeMenu}>
                         <div className="flex flex-row justify-center items-center gap-2 font-semibold hover:text-indigo-300">
                             <FileSearch className="h-5 w-5" />
-                            Pesquisa Integrada
+                            Pesquisa Avançada
                         </div>
                     </NavLink>
                 </nav>
