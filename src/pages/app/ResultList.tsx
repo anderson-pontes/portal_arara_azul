@@ -113,7 +113,7 @@ const ResultsList: React.FC = () => {
     if (loading) {
         return (
             <div className="flex justify-center items-center h-screen">
-                <GridLoader size={16} color="#9322d4" />
+                <GridLoader size={16} color="#5359E9" />
             </div>
         );
     }
@@ -134,7 +134,7 @@ const ResultsList: React.FC = () => {
                 <Card key={doe.id} className='shadow-md shadow-blue-500/40'>
                     <CardHeader className="flex-items-center flex-row justify-between space-y-0 pb-4">
                         <div className="space-y-1">
-                            <CardTitle className="text-base font-medium -tracking-tight text-blue-700 dark:text-blue-300">
+                            <CardTitle className="text-base font-medium text-blue-700 dark:text-blue-300">
                                 {doe.nome_arquivo}
                             </CardTitle>
                         </div>

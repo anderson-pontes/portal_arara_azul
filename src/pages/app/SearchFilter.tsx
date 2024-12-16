@@ -53,7 +53,7 @@ const SearchFilter: React.FC = () => {
     return (
         <form className="flex flex-col sm:flex-row items-center gap-2 flex-wrap">
 
-            <span className="text-lg font-semibold">Pesquisar:</span>
+            <span className="text-lg font-semibold text-blue-800/80">Pesquisar:</span>
             <Input
                 placeholder="Informe o conteúdo a ser buscado"
                 value={localQuery.termo}
