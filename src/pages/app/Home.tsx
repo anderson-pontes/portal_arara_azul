@@ -64,7 +64,7 @@ export function Home() {
 
 
 
-                <h1 className="text-3xl text-sky-800 font-bold mb-8 text-center">
+                <h1 className="text-3xl text-blue-800/80 font-bold mb-8 text-center">
                     Bem-vindo ao Portal de Análise de Dados Arara-Azul!
                 </h1>
 

@@ -129,7 +129,7 @@ const ResultsList: React.FC = () => {
 
     return (
         <div className='flex flex-col gap-4'>
-            <h2 className='text-2xl font-bold tracking-tight text-justify mt-4 text-violet-700'>Resultados para a busca:</h2>
+            <h2 className='text-2xl font-bold tracking-tight text-justify mt-4 text-blue-800/80'>Resultados para a busca:</h2>
             {data.map((doe) => (
                 <Card key={doe.id} className='shadow-md shadow-blue-500/40'>
                     <CardHeader className="flex-items-center flex-row justify-between space-y-0 pb-4">
