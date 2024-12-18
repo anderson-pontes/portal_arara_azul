@@ -9,14 +9,29 @@ import { Search, X } from 'lucide-react';
 
 const SearchForm: React.FC = () => {
     const { query, setQuery } = useContext(SearchContext)!;
-    const [localQuery, setLocalQuery] = useState<{ trecho: string; nome_arquivo: string; link_arquivo: string; termo: string; ano: string; data_inicio: string; data_fim: string; }>({
-        trecho: query.trecho,
-        termo: query.termo,
-        ano: query.ano,
-        nome_arquivo: query.nome_arquivo,
-        link_arquivo: query.link_arquivo,
-        data_inicio: query.data_inicio,
-        data_fim: query.data_fim,
+    const [localQuery, setLocalQuery] = useState<{ 
+        data_sessao_plenaria: string;
+        data_publicacao_doe: string;
+        exercicios: string;
+        classes_subclasses: string;
+        interessados: string;
+        unidades_jurisdicionadas: string;
+        relatores: string;
+        busca_exata: string;
+        busca_termos: string;
+        titulo: string; 
+    }>({
+        data_sessao_plenaria: query.data_sessao_plenaria,
+        data_publicacao_doe: query.data_publicacao_doe,
+        exercicios: query.exercicios,
+        classes_subclasses: query.classes_subclasses,
+        interessados: query.interessados,
+        unidades_jurisdicionadas: query.unidades_jurisdicionadas,
+        relatores: query.relatores,
+        busca_exata: query.busca_exata,
+        busca_termos: query.busca_termos,
+        titulo: query.titulo,
+        
     });
     const navigate = useNavigate();
 
@@ -29,24 +44,30 @@ const SearchForm: React.FC = () => {
     const handleClearFilters = () => {
         // Reseta o estado local para os valores iniciais
         setLocalQuery({
-            trecho: '',
-            termo: '',
-            ano: '',
-            nome_arquivo: '',
-            link_arquivo: '',
-            data_inicio: '',
-            data_fim: '',
+            data_sessao_plenaria: '',
+            data_publicacao_doe: '',
+            exercicios: '',
+            classes_subclasses: '',
+            interessados: '',
+            unidades_jurisdicionadas: '',
+            relatores: '',
+            busca_exata: '',
+            busca_termos: '',
+            titulo: '',
         });
 
         // Também reseta o contexto se necessário
         setQuery({
-            trecho: '',
-            termo: '',
-            ano: '',
-            nome_arquivo: '',
-            link_arquivo: '',
-            data_inicio: '',
-            data_fim: '',
+            data_sessao_plenaria: '',
+            data_publicacao_doe: '',
+            exercicios: '',
+            classes_subclasses: '',
+            interessados: '',
+            unidades_jurisdicionadas: '',
+            relatores: '',
+            busca_exata: '',
+            busca_termos: '',
+            titulo: '',
         });
     };
 
@@ -63,41 +84,71 @@ const SearchForm: React.FC = () => {
 
 
                     <Input
-                        placeholder="Informe os termos a serem pesquisados"
-                        value={localQuery.termo}
-                        onChange={(e) => setLocalQuery({ ...localQuery, termo: e.target.value })}
-                        className="w-full sm:col-span-2 md:col-span-3"
+                        placeholder="Busca avançada por termos"
+                        value={localQuery.busca_termos}
+                        onChange={(e) => setLocalQuery({ ...localQuery, busca_termos: e.target.value })}
+                        className="w-full sm:col-span-1 md:col-span-2"
                     />
                     <Input
-                        placeholder="Ano"
-                        value={localQuery.ano}
-                        onChange={(e) => setLocalQuery({ ...localQuery, ano: e.target.value })}
+                        placeholder="Busca exata"
+                        value={localQuery.busca_exata}
+                        onChange={(e) => setLocalQuery({ ...localQuery, busca_exata: e.target.value })}
+                        className="w-full sm:col-span-1 md:col-span-2"
+                    />
+                    <Input
+                        placeholder="Interessados"
+                        value={localQuery.interessados}
+                        onChange={(e) => setLocalQuery({ ...localQuery, interessados: e.target.value })}
+                        className="w-full"
+                    />
+                    <Input
+                        placeholder="Relatores"
+                        value={localQuery.relatores}
+                        onChange={(e) => setLocalQuery({ ...localQuery, relatores: e.target.value })}
+                        className="w-full"
+                    />
+                    <Input
+                        placeholder="Unidades jurisdicionadas"
+                        value={localQuery.unidades_jurisdicionadas}
+                        onChange={(e) => setLocalQuery({ ...localQuery, unidades_jurisdicionadas: e.target.value })}
+                        className="w-full"
+                    />
+                    <Input
+                        placeholder="Classes e Subclasses"
+                        value={localQuery.classes_subclasses}
+                        onChange={(e) => setLocalQuery({ ...localQuery, classes_subclasses: e.target.value })}
+                        className="w-full"
+                    />
+                    <Input
+                        placeholder="Busca por título"
+                        value={localQuery.titulo}
+                        onChange={(e) => setLocalQuery({ ...localQuery, titulo: e.target.value })}
+                        className="w-full"
+                    />
+                    <Input
+                        placeholder="Data da sessão plenário"
+                        value={localQuery.data_sessao_plenaria}
+                        onChange={(e) => setLocalQuery({ ...localQuery, data_sessao_plenaria: e.target.value })}
+                        className="w-full"
+                    />
+                    <Input
+                        placeholder="Data de publicação no DOE"
+                        value={localQuery.data_publicacao_doe}
+                        onChange={(e) => setLocalQuery({ ...localQuery, data_publicacao_doe: e.target.value })}
+                        className="w-full"
+                    />
+                    <Input
+                        placeholder="Exercícios"
+                        value={localQuery.exercicios}
+                        onChange={(e) => setLocalQuery({ ...localQuery, exercicios: e.target.value })}
                         className="w-full"
                     />
 
-                    <div className="w-full sm:col-span-2 md:col-span-4">
-                        <h2 className="text-lg font-semibold mb-2 text-blue-700/80">Busca por período:</h2>
-                        <div className="flex flex-row gap-4">
+                    
 
-                            <Input
-                                placeholder="Data Inicial (dd/mm/aaaa)"
-                                value={localQuery.data_inicio}
-                                onChange={(e) => setLocalQuery({ ...localQuery, data_inicio: e.target.value })}
-                                className="w-full"
-                            />
-                            <Input
-                                placeholder="Data Final (dd/mm/aaaa)"
-                                value={localQuery.data_fim}
-                                onChange={(e) => setLocalQuery({ ...localQuery, data_fim: e.target.value })}
-                                className="w-full"
-                            />
-
-
-                        </div>
+                    
                     </div>
 
-
-                </div>
 
                 <div className="flex flex-row gap-4 items-center mt-4">
 

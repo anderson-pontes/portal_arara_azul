@@ -16,13 +16,18 @@ import { SearchX } from 'lucide-react';
 
 interface AtosData {
     id: number;
-    trecho: string;
-    nome_arquivo: string;
-    link_arquivo: string;
-    termo: string;
-    ano: string;
-    data_inicio: string;
-    data_fim: string;
+    data_sessao_plenaria: string;
+    data_publicacao_doe: string;
+    exercicios: string;
+    classes_subclasses: string;
+    interessados: string;
+    unidades_jurisdicionadas: string;
+    relatores: string;
+    busca_exata: string;
+    busca_termos: string;
+    titulo: string;
+    ementa: string;
+    link_download: string;
 }
 
 const ResultsList: React.FC = () => {
@@ -36,7 +41,7 @@ const ResultsList: React.FC = () => {
 
     useEffect(() => {
         if (query) {
-            if (!query.termo && !query.ano && !query.data_inicio && !query.data_fim) {
+            if (!query.data_publicacao_doe && !query.data_sessao_plenaria && !query.exercicios && !query.classes_subclasses && !query.interessados && !query.unidades_jurisdicionadas && !query.relatores && !query.busca_exata && !query.busca_termos && !query.titulo) {
                 setError(
                     <div className='text-xl items-center flex flex-col font-semibold text-justify mt-8 text-muted-foreground'>
                         <p>Favor informe o conteúdo a ser pesquisado.</p>
@@ -54,16 +59,23 @@ const ResultsList: React.FC = () => {
         setError(null);
 
         const queryString = new URLSearchParams({
-            termo: query.termo,
-            ano: query.ano,
-            data_inicio: query.data_inicio,
-            data_fim: query.data_fim,
+            data_sessao_plenaria: query.data_sessao_plenaria,
+            data_publicacao_doe: query.data_publicacao_doe,
+            exercicios: query.exercicios,
+            classes_subclasses: query.classes_subclasses,
+            interessados: query.interessados,
+            unidades_jurisdicionadas: query.unidades_jurisdicionadas,
+            relatores: query.relatores,
+            busca_exata: query.busca_exata,
+            busca_termos: query.busca_termos,
+            titulo: query.titulo,
+
             page: pagina.toString(),
             limit: limit.toString(),
         }).toString();
 
         try {
-            const response = await api.get(`/buscar?${queryString}`);
+            const response = await api.get(`/consulta?${queryString}`);
             const fetchedData = response.data.resultados;
             setData(fetchedData);
 
@@ -130,21 +142,21 @@ const ResultsList: React.FC = () => {
     return (
         <div className='flex flex-col gap-4'>
             <h2 className='text-2xl font-bold tracking-tight text-justify mt-4 text-blue-800/80'>Resultados para a busca:</h2>
-            {data.map((doe) => (
-                <Card key={doe.id} className='shadow-md shadow-blue-500/40'>
+            {data.map((titulo) => (
+                <Card key={titulo.id} className='shadow-md shadow-blue-500/40'>
                     <CardHeader className="flex-items-center flex-row justify-between space-y-0 pb-4">
                         <div className="space-y-1">
                             <CardTitle className="text-base font-medium text-blue-700 dark:text-blue-300">
-                                {doe.nome_arquivo}
+                                {titulo.titulo}
                             </CardTitle>
                         </div>
                     </CardHeader>
                     <CardContent className="space-y-1">
-                        <p className="leading-7 [&:not(:first-child)]:mt-6">{doe.trecho}</p>
+                        <p className="leading-7 [&:not(:first-child)]:mt-6">{titulo.ementa}</p>
                     </CardContent>
                     <CardFooter className="flex justify-start gap-2">
                         <a
-                            href={`http://10.96.20.15:5000${doe.link_arquivo}`}
+                            href={`${titulo.link_download}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex justify-start gap-2 items-center leading-7 text-blue-600 hover:underline"
