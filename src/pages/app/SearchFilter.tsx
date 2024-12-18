@@ -15,7 +15,7 @@ const SearchFilter: React.FC = () => {
         classes_subclasses: query.classes_subclasses || '',
         interessados: query.interessados || '',
         unidades_jurisdicionadas: query.unidades_jurisdicionadas || '',
-        relatores: query.relatores || '',
+        relator: query.relator || '',
         busca_exata: query.busca_exata || '',
         busca_termos: query.busca_termos || '',
         titulo: query.titulo || '',
@@ -39,7 +39,7 @@ const SearchFilter: React.FC = () => {
             classes_subclasses: '',
             interessados: '',
             unidades_jurisdicionadas: '',
-            relatores: '',
+            relator: '',
             busca_exata: '',
             busca_termos: '',
             titulo: '',
@@ -89,9 +89,9 @@ const SearchFilter: React.FC = () => {
                 className="w-full"
             />
             <Input
-                placeholder="Relatores"
-                value={localQuery.relatores}
-                onChange={(e) => setLocalQuery({ ...localQuery, relatores: e.target.value })}
+                placeholder="relator"
+                value={localQuery.relator}
+                onChange={(e) => setLocalQuery({ ...localQuery, relator: e.target.value })}
                 className="w-full"
             />
             <Input

@@ -8,7 +8,7 @@ interface SearchContextType {
         classes_subclasses: string;
         interessados: string;
         unidades_jurisdicionadas: string;
-        relatores: string;
+        relator: string;
         busca_exata: string;
         busca_termos: string;
         titulo: string;
@@ -20,7 +20,7 @@ interface SearchContextType {
         classes_subclasses: string;
         interessados: string;
         unidades_jurisdicionadas: string;
-        relatores: string;
+        relator: string;
         busca_exata: string;
         busca_termos: string;
         titulo: string;
@@ -37,7 +37,7 @@ export const SearchProvider = ({ children }: { children: ReactNode }) => {
         classes_subclasses: string;
         interessados: string;
         unidades_jurisdicionadas: string;
-        relatores: string;
+        relator: string;
         busca_exata: string;
         busca_termos: string;
         titulo: string; 
@@ -48,7 +48,7 @@ export const SearchProvider = ({ children }: { children: ReactNode }) => {
         classes_subclasses: '',
         interessados: '',
         unidades_jurisdicionadas: '',
-        relatores: '',
+        relator: '',
         busca_exata: '',
         busca_termos: '',
         titulo: '',
