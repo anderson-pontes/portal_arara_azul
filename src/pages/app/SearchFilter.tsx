@@ -56,7 +56,7 @@ const SearchFilter: React.FC = () => {
     return (
         <>
          <span className="text-lg font-semibold text-blue-800/80">Pesquisar:</span>
-        <form className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4'>
+        <form className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4 text-slate-700'>
            
             <Input
                 placeholder="Busca avançada por termos"

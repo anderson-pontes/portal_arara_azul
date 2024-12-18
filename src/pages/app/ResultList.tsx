@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { SearchContext } from '@/Context/SearchContext';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { AiFillFilePdf } from 'react-icons/ai';
 import { api } from '@/lib/axios';
 import {
@@ -38,6 +38,8 @@ interface AtosData {
     titulo: string;
     unidades_jurisdicionadas: string;
     fonte: string;
+    processos: string;
+    relatores: string;
 }
 
 const ResultsList: React.FC = () => {
@@ -133,9 +135,10 @@ const ResultsList: React.FC = () => {
                 <Card key={index} className='shadow-md shadow-blue-500/40'>
                     <CardHeader className="flex-items-center flex-row justify-between space-y-0 pb-4">
                         <div className="space-y-1">
-                            <CardTitle className="text-base font-medium text-blue-700 dark:text-blue-300">
+                            <CardTitle className="text-base font-medium text-blue-800/80 dark:text-blue-300">
                                 {item.titulo}
                             </CardTitle>
+                            <CardDescription>Processo: {item.processos}</CardDescription>
                         </div>
                     </CardHeader>
                     <CardContent className="space-y-1">
@@ -170,6 +173,10 @@ const ResultsList: React.FC = () => {
                                 <div className='space-y-6'>
                                     <Table>
                                         <TableBody>
+                                            <TableRow>
+                                                <TableCell className='text-muted-foreground'>Processo</TableCell>
+                                                <TableCell className='flex justify-end'>{item.processos}</TableCell>
+                                            </TableRow>
                                             <TableRow>
                                                 <TableCell className='text-muted-foreground'>Data da sessão plenária</TableCell>
                                                 <TableCell className='flex justify-end'>
@@ -227,7 +234,7 @@ const ResultsList: React.FC = () => {
 
                                             <TableRow>
                                                 <TableCell className='text-muted-foreground'>Relatores</TableCell>
-                                                <TableCell className='flex text-justify'>{item.relator}</TableCell>
+                                                <TableCell className='flex text-justify'>{item.relatores}</TableCell>
                                             </TableRow>
 
                                             <TableRow>
