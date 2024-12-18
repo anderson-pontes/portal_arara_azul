@@ -12,7 +12,11 @@ import {
     PaginationPrevious,
 } from "@/components/ui/pagination";
 import GridLoader from 'react-spinners/GridLoader';
-import { SearchX } from 'lucide-react';
+import { Eye, SearchX } from 'lucide-react';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
+import { Button } from '@/components/ui/button';
+import { format, parse } from 'date-fns';
 
 interface AtosData {
     ano_sessao_plenaria: string;
@@ -33,6 +37,7 @@ interface AtosData {
     relator: string;
     titulo: string;
     unidades_jurisdicionadas: string;
+    fonte: string;
 }
 
 const ResultsList: React.FC = () => {
@@ -137,15 +142,110 @@ const ResultsList: React.FC = () => {
                         <p className="leading-7 [&:not(:first-child)]:mt-6">{item.ementa}</p>
                     </CardContent>
                     <CardFooter className="flex justify-start gap-2">
-                        <a
-                            href={item.link_download}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex justify-start gap-2 items-center leading-7 text-blue-600 hover:underline"
+                        <Button
+                            variant="outline"
+                            onClick={() => window.open(item.link_download, '_blank')}
+                            className="flex justify-start gap-2 items-center border-blue-500 font-normal text-blue-500"
+                            type="button"
                         >
                             <AiFillFilePdf className="text-red-600" />
-                            Abrir documento
-                        </a>
+                            Download
+                        </Button>
+                        <Dialog>
+                            <DialogTrigger asChild>
+                                <Button variant="outline"
+                                    className="gap-2 border-blue-500 font-normal text-blue-500 hover:text-blue-600 dark:border-blue-300 dark:text-blue-300"
+                                >
+                                    <Eye className='h-3 w-3' />
+                                    Detalhes
+                                </Button>
+                            </DialogTrigger>
+
+                            <DialogContent className="max-h-[90vh] overflow-y-auto">
+                                <DialogHeader>
+                                    <DialogTitle className='text-indigo-600 text-center text-xl'>{item.titulo}</DialogTitle>
+                                    <DialogDescription>Detalhes do Ato</DialogDescription>
+                                </DialogHeader>
+
+                                <div className='space-y-6'>
+                                    <Table>
+                                        <TableBody>
+                                            <TableRow>
+                                                <TableCell className='text-muted-foreground'>Data da sessão plenária</TableCell>
+                                                <TableCell className='flex justify-end'>
+                                                    {item.data_sessao_plenaria
+                                                        ? (() => {
+                                                            const data = parse(item.data_sessao_plenaria, "EEE, dd MMM yyyy HH:mm:ss 'GMT'", new Date());
+
+                                                            if (!isNaN(data.getTime())) {
+                                                                return format(data, 'dd/MM/yyyy');
+                                                            } else {
+                                                                return 'Data inválida';
+                                                            }
+                                                        })()
+                                                        : '-'}
+                                                </TableCell>
+                                            </TableRow>
+
+                                            <TableRow>
+                                                <TableCell className='text-muted-foreground'>Data da publicação no Diário Oficial do Estado</TableCell>
+                                                <TableCell className='flex justify-end'>
+                                                    {item.data_publicacao_doe
+                                                        ? (() => {
+                                                            const data = parse(item.data_publicacao_doe, "EEE, dd MMM yyyy HH:mm:ss 'GMT'", new Date());
+
+                                                            if (!isNaN(data.getTime())) {
+                                                                return format(data, 'dd/MM/yyyy');
+                                                            } else {
+                                                                return 'Data inválida';
+                                                            }
+                                                        })()
+                                                        : '-'}
+                                                </TableCell>
+                                            </TableRow>
+
+                                            <TableRow>
+                                                <TableCell className='text-muted-foreground'>Exercícios</TableCell>
+                                                <TableCell className='flex justify-end'>{item.exercicios}</TableCell>
+                                            </TableRow>
+
+                                            <TableRow>
+                                                <TableCell className='text-muted-foreground'>Classes/Subclasses</TableCell>
+                                                <TableCell className='flex text-justify'>{item.classes_subclasses}</TableCell>
+                                            </TableRow>
+
+                                            <TableRow>
+                                                <TableCell className='text-muted-foreground'>Interessados</TableCell>
+                                                <TableCell className='flex text-justify'>{item.interessados}</TableCell>
+                                            </TableRow>
+
+
+                                            <TableRow>
+                                                <TableCell className='text-muted-foreground'>Unidades jurisdicionadas</TableCell>
+                                                <TableCell className='flex text-justify'>{item.unidades_jurisdicionadas}</TableCell>
+                                            </TableRow>
+
+                                            <TableRow>
+                                                <TableCell className='text-muted-foreground'>Relatores</TableCell>
+                                                <TableCell className='flex text-justify'>{item.relator}</TableCell>
+                                            </TableRow>
+
+                                            <TableRow>
+                                                <TableCell className='text-muted-foreground'>Ementa</TableCell>
+                                                <TableCell className='flex text-justify'>{item.ementa}</TableCell>
+                                            </TableRow>
+
+                                            <TableRow>
+                                                <TableCell className='text-muted-foreground'>Fonte</TableCell>
+                                                <TableCell className='flex justify-end'>{item.fonte}</TableCell>
+                                            </TableRow>
+
+                                        </TableBody>
+                                    </Table>
+                                </div>
+
+                            </DialogContent>
+                        </Dialog>
                     </CardFooter>
                 </Card>
             ))}
