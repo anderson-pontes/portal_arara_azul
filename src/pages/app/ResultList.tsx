@@ -3,14 +3,6 @@ import { SearchContext } from '@/Context/SearchContext';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { AiFillFilePdf } from 'react-icons/ai';
 import { api } from '@/lib/axios';
-import {
-    Pagination,
-    PaginationContent,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious,
-} from "@/components/ui/pagination";
 import GridLoader from 'react-spinners/GridLoader';
 import { Eye, SearchX } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
@@ -47,7 +39,7 @@ const ResultsList: React.FC = () => {
     const [data, setData] = useState<AtosData[]>([]);
     const [error, setError] = useState<JSX.Element | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
-    const [page, setPage] = useState<number>(1);
+    const [page] = useState<number>(1);
     const [limit] = useState<number>(25);
 
     useEffect(() => {
@@ -104,11 +96,7 @@ const ResultsList: React.FC = () => {
         }
     };
 
-    const handlePageChange = (newPage: number) => {
-        if (newPage >= 1) {
-            setPage(newPage);
-        }
-    };
+   
 
     if (loading) {
         return (
@@ -257,21 +245,7 @@ const ResultsList: React.FC = () => {
                 </Card>
             ))}
 
-            <Pagination className="bottom-0 dark:bg-transparent py-2 cursor-pointer">
-                <PaginationContent>
-                    {page > 1 && (
-                        <PaginationPrevious size="sm" onClick={() => handlePageChange(page - 1)}>
-                            Anterior
-                        </PaginationPrevious>
-                    )}
-                    <PaginationItem>
-                        <PaginationLink>{page}</PaginationLink>
-                    </PaginationItem>
-                    <PaginationNext size="sm" onClick={() => handlePageChange(page + 1)}>
-                        Próxima
-                    </PaginationNext>
-                </PaginationContent>
-            </Pagination>
+            
         </div>
     );
 };
