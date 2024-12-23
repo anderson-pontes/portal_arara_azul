@@ -5,6 +5,7 @@ import imgIndicadores from "@/assets/indicadores.png";
 import imgProdutividade from "@/assets/produtividade.png";
 import imgCamara from "@/assets/camara.png";
 import imgDespesa from "@/assets/despesa.png";
+import imgBancoAtos from "@/assets/imgBancoAtos.png";
 import { Link } from "react-router-dom";
 import { Button } from '@/components/ui/button';
 import { Eye } from 'lucide-react';
@@ -51,6 +52,12 @@ export function Home() {
             description: "Levantamento das pessoas jurídicas subordinadas à jurisdição do TCE-PA",
             image: imgMaps,
             route: "/jurisdicionados",
+        },
+        {
+            title: "BANCO DE ATOS",
+            description: "Consulta abrangente de atos normativos da base de dados do TCE-PA",
+            image: imgBancoAtos,
+            route: "/pesquisaintegrada",
         },
         
 
