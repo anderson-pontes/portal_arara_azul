@@ -54,7 +54,7 @@ export function Home() {
             route: "/jurisdicionados",
         },
         {
-            title: "BANCO DE ATOS",
+            title: "BASE DE CONHECIMENTO",
             description: "Consulta abrangente de atos normativos da base de dados do TCE-PA",
             image: imgBancoAtos,
             route: "/pesquisaintegrada",
